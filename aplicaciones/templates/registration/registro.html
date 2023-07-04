@@ -1,0 +1,36 @@
+{% extends 'aplicaciones/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block contenido%}
+<main>
+<link rel="stylesheet" href="{% static 'aplicaciones/css/log.css' %}">
+
+<h1 style="padding-top:10%; margin-bottom:5vh; align-content: center; justify-content: center; display: flex;">Registro de Usuario</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Registrate</h2>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ formcli2 | crispy}}
+                        <div> El nombre de Usuario tiene que coincidir con el correo </div>
+                        {{form | crispy}}
+                        
+
+                        <br>
+                        <button type="" class="butt">Registrar</button>     {% comment %} poner accion con js que revise el correo {% endcomment %}               
+                    </form>
+                    <button class="but"><a href="{% url 'login' %}" style="text-decoration: none; ">volver</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'aplicaciones/js/registro.js' %}"></script>
+</main>
+
+{%endblock%}
