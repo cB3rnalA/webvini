@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2>Registrate</h2>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data" >
                         {% csrf_token %}
                         {{ formcli2 | crispy}}
                         <div> El nombre de Usuario tiene que coincidir con el correo </div>

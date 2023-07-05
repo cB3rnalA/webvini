@@ -380,7 +380,7 @@ def registro(request):
     if request.method == 'POST':
         formulario = formCrearCli(request.POST)
         formulario2 = formCreaC(request.POST)
-        if formulario.is_valid():
+        if formulario2.is_valid():
             formulario.save()
             formulario2.save()
             user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
