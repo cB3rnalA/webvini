@@ -44,7 +44,7 @@ class formCreaC(forms.ModelForm):
 
 class formCrearCli(UserCreationForm):
     
-    username = forms.CharField(label='Correo', min_length=5, max_length=200, validators= [RegexValidator(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$',message="Ingrese correo valido")],help_text=("FORMATO: XXXX@XXXX.XX"),required=False,widget=forms.TextInput(attrs={'placeholder': 'Correo'}))
+    username = forms.CharField(label='Nombre de usuario', min_length=5, max_length=200, validators= [RegexValidator(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$',message="Ingrese correo valido")],help_text=("FORMATO: XXXX@XXXX.XX"),required=False,widget=forms.TextInput(attrs={'placeholder': 'Correo'}))
     
     class Meta:
         model =User
